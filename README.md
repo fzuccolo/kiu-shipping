@@ -28,8 +28,8 @@ client = Client(name="Company Name")
 manager.add_client(client)
 
 # Register facilities
-facility_a = Facility(name="Name A", location="Location X")
-facility_b = Facility(name="Name B", location="Location Y")
+north_facility = Facility(name="Name A", location="Location X")
+south_facility = Facility(name="Name B", location="Location Y")
 manager.add_facility(north_facility)
 manager.add_facility(south_facility)
 
@@ -38,11 +38,22 @@ transport = Transport(name="Tango 01", max_weight=10000)  # max_weight in Kg
 manager.add_transport(transport)
 
 # Schedule a trip
-trip = Trip(transport=transport, origin=south_facility, destination=north_facility, departure_date=date(2024, 2, 28), arrival_date=date(2024, 3, 1))
+trip = Trip(
+    transport=transport,
+    origin=south_facility,
+    destination=north_facility,
+    departure_date=date(2024, 2, 28),
+    arrival_date=date(2024, 3, 1),
+)
 manager.add_trip(trip)
 
 # Schedule a package
-package = Package(sender=client, origin=south_facility, destination=north_facility, weight=500)
+package = Package(
+    sender=client,
+    origin=south_facility,
+    destination=north_facility,
+    weight=500,
+)
 manager.add_package(package)
 
 # generate a report
