@@ -9,7 +9,7 @@ Supported Python versions: `3.10`, `3.11` and `3.12`.
 For linux, clone the repo and install package:
 
     git clone git@github.com:fzuccolo/kiu-shipping.git
-    cd ./kiu_shipping
+    cd ./kiu-shipping
     python3 -m venv venv
     . ./venv/bin/activate
     pip3 install -r requirements_dev.txt
