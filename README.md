@@ -8,7 +8,7 @@ Supported Python versions: `3.10`, `3.11` and `3.12`.
 
 For linux, clone the repo and install package:
 
-    git clone (...)
+    git clone git@github.com:fzuccolo/kiu-shipping.git
     cd ./kiu_shipping
     python3 -m venv venv
     . ./venv/bin/activate
@@ -19,7 +19,7 @@ For linux, clone the repo and install package:
 
 ```python
 
-from kiu_shipping import *
+from kiu_shipping import ShippingManager, Client, Facility, Transport, Trip, Package
 
 manager = ShippingManager()
 
@@ -45,7 +45,7 @@ manager.add_trip(trip)
 package = Package(sender=client, origin=south_facility, destination=north_facility, weight=500)
 manager.add_package(package)
 
-# generate reports
+# generate a report
 manager.get_daily_report(date(2024, 2, 28))
 
 ```
@@ -56,7 +56,7 @@ With the activated virtual environment, run:
 
     pytest
 
-or for running tests, flake8 and coverage (currently 100%) all in one with:
+or for running tests, flake8 and coverage (currently at 100%) all in one with:
 
     make test
 
